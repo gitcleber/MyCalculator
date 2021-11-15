@@ -16,7 +16,17 @@ namespace Calculator
             bool OKBool = true;
 
             Console.WriteLine("Welcome to My Calculator.");
-            Console.Write("Press ENTER key to end program.");
+
+            Console.Write("\nEnter first number: ");
+            OKBool = double.TryParse(Console.ReadLine(), out firstDouble);
+            Console.Write("\nEnter second number: ");
+            OKBool = double.TryParse(Console.ReadLine(), out secondDouble);
+
+            totalDouble = firstDouble + secondDouble;
+
+            Console.WriteLine($"\n{firstDouble} + {secondDouble} = {totalDouble}\n");
+
+            Console.WriteLine("Press ENTER key to end program.");
             Console.ReadLine();
         }
     }
