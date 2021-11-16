@@ -1,0 +1,1 @@
+﻿Esta é minha Minha versão da calculadora;
