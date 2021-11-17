@@ -10,8 +10,8 @@ namespace myCalc
             string input;
             bool OKBool;
             char operation;
-
             do {
+                Console.Clear();
                 Console.WriteLine("Calculadora - v1\n");
                 Console.WriteLine("Sair - 's'");
                 Console.Write(">>> ");
@@ -21,14 +21,18 @@ namespace myCalc
                 {
                     do
                     {
-                        Console.WriteLine("soma: '+' subtração: '-' divisão: '/' multiplicação: '*' - Zerar: 'z'");
+                        Console.Clear();
+                        Console.WriteLine("Calculadora - v1\n");
+                        Console.WriteLine("soma: '+' subtração: '-' divisão: '/' multiplicação: '*' - Zerar: 'z' - Sair: 's'");
                         Console.Write($"\n>>> {numCalc1} ");
                         operation = Console.ReadKey().KeyChar;
                         if ((operation == '+') || (operation == '-') || (operation == '/') || (operation == '*'))
                         {
                             do
-                            {
-                                Console.WriteLine("\nZerar: 'z'");
+                            {                                
+                                Console.Clear();
+                                Console.WriteLine("Calculadora - v1\n");
+                                Console.WriteLine("\nZerar: 'z' - Sair 's'");
                                 Console.Write($"\n>>> {numCalc1} {operation} ");
                                 input = Console.ReadLine();
                                 OKBool = Double.TryParse(input, out numCalc2);
@@ -53,9 +57,8 @@ namespace myCalc
                                             break; // break that closes the case
                                     }
                                 }
-                                else if (input == "z")
+                                else if ((input == "z") || (input == "s"))
                                     OKBool = true;
-
                             } while (!OKBool);
                         }
                         else if (operation == 'z')
